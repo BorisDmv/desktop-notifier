@@ -26,5 +26,17 @@ namespace Desktop_Notifier
         {
             titleText.Text = "Test Panel";
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime currentTime = DateTime.Now;
+            this.clockLabel.Text = currentTime.ToString("hh:mm:ss");
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
     }
 }
