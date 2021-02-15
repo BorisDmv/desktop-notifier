@@ -46,10 +46,10 @@ namespace Desktop_Notifier
             this.deadLineInsertBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.addTaskButton = new Guna.UI2.WinForms.Guna2Button();
             this.topStrip = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.minimizeBtn = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableTasks)).BeginInit();
+            this.topStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -65,23 +65,23 @@ namespace Desktop_Notifier
             this.exitBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.ForeColor = System.Drawing.Color.White;
             this.exitBtn.HoverState.Parent = this.exitBtn;
-            this.exitBtn.Location = new System.Drawing.Point(634, 401);
-            this.exitBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.exitBtn.Location = new System.Drawing.Point(1103, 3);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.ShadowDecoration.Parent = this.exitBtn;
-            this.exitBtn.Size = new System.Drawing.Size(120, 29);
+            this.exitBtn.Size = new System.Drawing.Size(51, 40);
             this.exitBtn.TabIndex = 0;
-            this.exitBtn.Text = "Exit";
+            this.exitBtn.Text = "X";
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // clockLabel
             // 
             this.clockLabel.AutoSize = true;
-            this.clockLabel.BackColor = System.Drawing.Color.SlateBlue;
-            this.clockLabel.Location = new System.Drawing.Point(8, 261);
-            this.clockLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.clockLabel.BackColor = System.Drawing.Color.Transparent;
+            this.clockLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.clockLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.clockLabel.Location = new System.Drawing.Point(12, 560);
             this.clockLabel.Name = "clockLabel";
-            this.clockLabel.Size = new System.Drawing.Size(33, 13);
+            this.clockLabel.Size = new System.Drawing.Size(69, 29);
             this.clockLabel.TabIndex = 4;
             this.clockLabel.Text = "clock";
             // 
@@ -94,7 +94,7 @@ namespace Desktop_Notifier
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.tableTasks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tableTasks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tableTasks.BackgroundColor = System.Drawing.Color.White;
+            this.tableTasks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.tableTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableTasks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableTasks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -117,13 +117,12 @@ namespace Desktop_Notifier
             this.tableTasks.DefaultCellStyle = dataGridViewCellStyle6;
             this.tableTasks.EnableHeadersVisualStyles = false;
             this.tableTasks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tableTasks.Location = new System.Drawing.Point(17, 70);
-            this.tableTasks.Margin = new System.Windows.Forms.Padding(2);
+            this.tableTasks.Location = new System.Drawing.Point(12, 58);
             this.tableTasks.Name = "tableTasks";
             this.tableTasks.RowHeadersVisible = false;
             this.tableTasks.RowHeadersWidth = 62;
             this.tableTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableTasks.Size = new System.Drawing.Size(322, 97);
+            this.tableTasks.Size = new System.Drawing.Size(1130, 457);
             this.tableTasks.TabIndex = 6;
             this.tableTasks.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.tableTasks.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -131,7 +130,7 @@ namespace Desktop_Notifier
             this.tableTasks.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.tableTasks.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.tableTasks.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.tableTasks.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.tableTasks.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.tableTasks.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tableTasks.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.tableTasks.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -147,7 +146,6 @@ namespace Desktop_Notifier
             this.tableTasks.ThemeStyle.RowsStyle.Height = 22;
             this.tableTasks.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tableTasks.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.tableTasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick_1);
             // 
             // nameInsertBox
             // 
@@ -158,19 +156,19 @@ namespace Desktop_Notifier
             this.nameInsertBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.nameInsertBox.DisabledState.Parent = this.nameInsertBox;
             this.nameInsertBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.nameInsertBox.FillColor = System.Drawing.Color.DimGray;
             this.nameInsertBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.nameInsertBox.FocusedState.Parent = this.nameInsertBox;
             this.nameInsertBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nameInsertBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.nameInsertBox.HoverState.Parent = this.nameInsertBox;
-            this.nameInsertBox.Location = new System.Drawing.Point(43, 183);
-            this.nameInsertBox.Margin = new System.Windows.Forms.Padding(2);
+            this.nameInsertBox.Location = new System.Drawing.Point(544, 527);
             this.nameInsertBox.Name = "nameInsertBox";
             this.nameInsertBox.PasswordChar = '\0';
-            this.nameInsertBox.PlaceholderText = "";
+            this.nameInsertBox.PlaceholderText = "Task Name";
             this.nameInsertBox.SelectedText = "";
             this.nameInsertBox.ShadowDecoration.Parent = this.nameInsertBox;
-            this.nameInsertBox.Size = new System.Drawing.Size(51, 23);
+            this.nameInsertBox.Size = new System.Drawing.Size(196, 62);
             this.nameInsertBox.TabIndex = 7;
             // 
             // deadLineInsertBox
@@ -182,19 +180,19 @@ namespace Desktop_Notifier
             this.deadLineInsertBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.deadLineInsertBox.DisabledState.Parent = this.deadLineInsertBox;
             this.deadLineInsertBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.deadLineInsertBox.FillColor = System.Drawing.Color.DimGray;
             this.deadLineInsertBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.deadLineInsertBox.FocusedState.Parent = this.deadLineInsertBox;
             this.deadLineInsertBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.deadLineInsertBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.deadLineInsertBox.HoverState.Parent = this.deadLineInsertBox;
-            this.deadLineInsertBox.Location = new System.Drawing.Point(125, 182);
-            this.deadLineInsertBox.Margin = new System.Windows.Forms.Padding(2);
+            this.deadLineInsertBox.Location = new System.Drawing.Point(746, 527);
             this.deadLineInsertBox.Name = "deadLineInsertBox";
             this.deadLineInsertBox.PasswordChar = '\0';
-            this.deadLineInsertBox.PlaceholderText = "";
+            this.deadLineInsertBox.PlaceholderText = "Deadline";
             this.deadLineInsertBox.SelectedText = "";
             this.deadLineInsertBox.ShadowDecoration.Parent = this.deadLineInsertBox;
-            this.deadLineInsertBox.Size = new System.Drawing.Size(51, 23);
+            this.deadLineInsertBox.Size = new System.Drawing.Size(196, 62);
             this.deadLineInsertBox.TabIndex = 8;
             // 
             // addTaskButton
@@ -206,11 +204,10 @@ namespace Desktop_Notifier
             this.addTaskButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.addTaskButton.ForeColor = System.Drawing.Color.White;
             this.addTaskButton.HoverState.Parent = this.addTaskButton;
-            this.addTaskButton.Location = new System.Drawing.Point(218, 182);
-            this.addTaskButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addTaskButton.Location = new System.Drawing.Point(948, 527);
             this.addTaskButton.Name = "addTaskButton";
             this.addTaskButton.ShadowDecoration.Parent = this.addTaskButton;
-            this.addTaskButton.Size = new System.Drawing.Size(55, 22);
+            this.addTaskButton.Size = new System.Drawing.Size(194, 62);
             this.addTaskButton.TabIndex = 10;
             this.addTaskButton.Text = "Add";
             this.addTaskButton.Click += new System.EventHandler(this.addTaskButton_Click);
@@ -220,64 +217,65 @@ namespace Desktop_Notifier
             this.topStrip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.topStrip.BackColor = System.Drawing.Color.SlateBlue;
+            this.topStrip.Controls.Add(this.minimizeBtn);
+            this.topStrip.Controls.Add(this.titleLabel);
+            this.topStrip.Controls.Add(this.exitBtn);
             this.topStrip.Location = new System.Drawing.Point(0, 0);
-            this.topStrip.Margin = new System.Windows.Forms.Padding(2);
             this.topStrip.Name = "topStrip";
             this.topStrip.ShadowDecoration.Parent = this.topStrip;
-            this.topStrip.Size = new System.Drawing.Size(769, 30);
+            this.topStrip.Size = new System.Drawing.Size(1154, 46);
             this.topStrip.TabIndex = 5;
             this.topStrip.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topStrip_MouseDown);
             this.topStrip.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topStrip_MouseMove);
             this.topStrip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.topStrip_MouseUp);
             // 
-            // guna2BorderlessForm1
+            // titleLabel
             // 
-            this.guna2BorderlessForm1.ContainerControl = this;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.titleLabel.Location = new System.Drawing.Point(12, 13);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(123, 20);
+            this.titleLabel.TabIndex = 1;
+            this.titleLabel.Text = "Desktop Notifier";
             // 
-            // guna2Button1
+            // minimizeBtn
             // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(285, 329);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 11;
-            this.guna2Button1.Text = "guna2Button1";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notifyIcon1.BalloonTipText = "asd";
-            this.notifyIcon1.BalloonTipTitle = "asd";
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
+            this.minimizeBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.minimizeBtn.CheckedState.Parent = this.minimizeBtn;
+            this.minimizeBtn.CustomImages.Parent = this.minimizeBtn;
+            this.minimizeBtn.FillColor = System.Drawing.Color.SlateBlue;
+            this.minimizeBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimizeBtn.ForeColor = System.Drawing.Color.White;
+            this.minimizeBtn.HoverState.Parent = this.minimizeBtn;
+            this.minimizeBtn.Location = new System.Drawing.Point(1046, 3);
+            this.minimizeBtn.Name = "minimizeBtn";
+            this.minimizeBtn.ShadowDecoration.Parent = this.minimizeBtn;
+            this.minimizeBtn.Size = new System.Drawing.Size(51, 40);
+            this.minimizeBtn.TabIndex = 2;
+            this.minimizeBtn.Text = "-";
+            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(769, 438);
-            this.Controls.Add(this.guna2Button1);
+            this.ClientSize = new System.Drawing.Size(1154, 604);
             this.Controls.Add(this.addTaskButton);
             this.Controls.Add(this.deadLineInsertBox);
             this.Controls.Add(this.nameInsertBox);
             this.Controls.Add(this.tableTasks);
             this.Controls.Add(this.topStrip);
             this.Controls.Add(this.clockLabel);
-            this.Controls.Add(this.exitBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableTasks)).EndInit();
+            this.topStrip.ResumeLayout(false);
+            this.topStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,9 +295,9 @@ namespace Desktop_Notifier
         private Guna.UI2.WinForms.Guna2TextBox nameInsertBox;
 
         private Guna.UI2.WinForms.Guna2Panel topStrip;
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Label titleLabel;
+        private Guna.UI2.WinForms.Guna2Button minimizeBtn;
+
     }
 }
 

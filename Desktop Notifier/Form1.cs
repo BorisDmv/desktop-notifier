@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Desktop_Notifier
 {
     public partial class Form1 : Form
@@ -69,21 +70,6 @@ namespace Desktop_Notifier
             timer1.Start();
         }
 
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void taskTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void topStrip_MouseDown(object sender, MouseEventArgs e)
         {
@@ -146,16 +132,9 @@ namespace Desktop_Notifier
             tableTasks.DataSource = view;
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void minimizeBtn_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("sdf");
-        }
-
-
-
-        private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
