@@ -30,9 +30,6 @@ namespace Desktop_Notifier
             InitializeComponent();
 
 
-            notifyIcon1.Visible = true;
-            notifyIcon1.ShowBalloonTip(1000, "Kur", "Huyov", ToolTipIcon.Info);
-
             taskNameColumn = new DataColumn();
             taskNameColumn.DataType = System.Type.GetType("System.String");
             taskNameColumn.ColumnName = "Task Name";
