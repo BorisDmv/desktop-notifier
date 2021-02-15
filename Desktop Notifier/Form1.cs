@@ -12,6 +12,9 @@ namespace Desktop_Notifier
 {
     public partial class Form1 : Form
     {
+        bool dragStrip;
+        int moveX, moveY;
+
         public Form1()
         {
             InitializeComponent();
@@ -34,6 +37,7 @@ namespace Desktop_Notifier
             timer1.Start();
         }
 
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -52,6 +56,27 @@ namespace Desktop_Notifier
         private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        private void topStrip_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragStrip)
+            {
+                this.SetDesktopLocation(MousePosition.X - moveX, MousePosition.Y - moveY);
+            }
+        }
+
+        private void topStrip_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragStrip = false;
+        }
+
+        private void topStrip_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragStrip = true;
+                moveX = e.X;
+                moveY = e.Y;
+            }
         }
     }
 }
