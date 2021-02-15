@@ -10,14 +10,14 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Desktop_Notifier
 {
     public partial class Form1 : Form
     {
         bool dragStrip;
         int moveX, moveY;
-        public Dictionary<String, DateTime> Tasks = new Dictionary<String, DateTime>();
+
+        public Dictionary<String, String> Tasks = new Dictionary<String, String>();
 
             DataTable table = new DataTable();
             DataColumn taskNameColumn;
@@ -29,18 +29,19 @@ namespace Desktop_Notifier
         {
             InitializeComponent();
 
-
             taskNameColumn = new DataColumn();
             taskNameColumn.DataType = System.Type.GetType("System.String");
             taskNameColumn.ColumnName = "Task Name";
             table.Columns.Add(taskNameColumn);
 
             deadLineColumn = new DataColumn();
+            deadLineColumn.ReadOnly = true;
             deadLineColumn.DataType = Type.GetType("System.String");
             deadLineColumn.ColumnName = "Dead Line";
             table.Columns.Add(deadLineColumn);
 
             creationTimeColumn = new DataColumn();
+            creationTimeColumn.ReadOnly = true;
             creationTimeColumn.DataType = Type.GetType("System.String");
             creationTimeColumn.ColumnName = "Created At";
             table.Columns.Add(creationTimeColumn);
@@ -59,12 +60,47 @@ namespace Desktop_Notifier
         {
             DateTime currentTime = DateTime.Now;
             this.clockLabel.Text = currentTime.ToString("hh:mm:ss");
+            if (Tasks.ContainsValue(DateTime.Now.ToString("hh:mm")))
+            {
+                List<string> tempList = new List<string>();
+                tempList = Tasks.Values.ToList();
+                foreach (var item in Tasks.Where(kvp => kvp.Value == DateTime.Now.ToString("hh:mm")).ToList())
+                {
+                    Tasks.Remove(item.Key);
+                }
+
+                for (int i = 0; i < tempList.Count; i++)
+                {
+                    if (tempList[i] == DateTime.Now.ToString("hh:mm"))
+                    {
+                     table.Rows[i].Delete();
+                        
+                    }
+
+                }
+                
+
+
+                string message = "Task Expired";
+                string caption = "Task Expired";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+
+
+            }
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            guna2Panel2.BackColor = Color.FromArgb(100, 0, 0, 0);
+            //    tableTasks.BackColor = Color.FromArgb(100, 0, 0, 0);
+            // tableTasks.BackgroundColor = Color.FromArgb(100, 0, 0, 0);
+            this.TransparencyKey = Color.LimeGreen;
+            tableTasks.BackColor = Color.LimeGreen;
         }
 
 
@@ -104,7 +140,12 @@ namespace Desktop_Notifier
                     row["Task Name"] = nameInsertBox.Text;
                     row["Dead Line"] = deadLineInsertBox.Text;
                     row["Created At"] = DateTime.Now.ToString("hh:mm");
-                    Tasks.Add(nameInsertBox.Text, DateTime.Parse(deadLineInsertBox.Text.ToString()));
+                    /*
+                    string userInput = deadLineInsertBox.Text;
+                    var time = TimeSpan.Parse(userInput);
+                    var dateTime = DateTime.Today.Add(time);
+                    */
+                    Tasks.Add(nameInsertBox.Text, deadLineInsertBox.Text);
                     nameInsertBox.Text = "";
                     deadLineInsertBox.Text = "";
                     table.Rows.Add(row);
@@ -127,6 +168,26 @@ namespace Desktop_Notifier
 
 
             tableTasks.DataSource = view;
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Debug.WriteLine("asd");
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void topStrip_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void minimizeBtn_Click(object sender, EventArgs e)
