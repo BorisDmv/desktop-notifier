@@ -53,8 +53,15 @@ namespace Desktop_Notifier
 
         }
 
-        private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void topStrip_MouseDown(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragStrip = true;
+                moveX = e.X;
+                moveY = e.Y;
+            }
+        }
 
         private void topStrip_MouseMove(object sender, MouseEventArgs e)
         {
@@ -69,14 +76,9 @@ namespace Desktop_Notifier
             dragStrip = false;
         }
 
-        private void topStrip_MouseDown(object sender, MouseEventArgs e)
+        private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                dragStrip = true;
-                moveX = e.X;
-                moveY = e.Y;
-            }
+
         }
     }
 }
