@@ -53,7 +53,8 @@ namespace Desktop_Notifier
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            trayIcon.Visible = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -170,19 +171,17 @@ namespace Desktop_Notifier
             Debug.WriteLine("asd");
         }
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void trayIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            trayIcon.Visible = false;
+            WindowState = FormWindowState.Normal;
         }
 
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void topStrip_Paint(object sender, PaintEventArgs e)
-        {
-
+            Application.Exit();
         }
 
         private void minimizeBtn_Click(object sender, EventArgs e)
