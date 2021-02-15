@@ -22,11 +22,6 @@ namespace Desktop_Notifier
             Application.Exit();
         }
 
-        private void changeTextBtn_Click(object sender, EventArgs e)
-        {
-            titleText.Text = "Test Panel";
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             DateTime currentTime = DateTime.Now;
@@ -37,6 +32,26 @@ namespace Desktop_Notifier
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void taskTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
