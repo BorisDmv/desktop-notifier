@@ -39,7 +39,6 @@ namespace Desktop_Notifier
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.exitBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.clockLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.deadLineInsertBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.addTaskButton = new Guna.UI2.WinForms.Guna2Button();
@@ -48,6 +47,7 @@ namespace Desktop_Notifier
             this.titleLabel = new System.Windows.Forms.Label();
             this.nameInsertBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableTasks = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.clockLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.topStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableTasks)).BeginInit();
             this.SuspendLayout();
@@ -73,19 +73,6 @@ namespace Desktop_Notifier
             this.exitBtn.TabIndex = 0;
             this.exitBtn.Text = "X";
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
-            // 
-            // clockLabel
-            // 
-            this.clockLabel.AutoSize = true;
-            this.clockLabel.BackColor = System.Drawing.Color.Transparent;
-            this.clockLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.clockLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.clockLabel.Location = new System.Drawing.Point(8, 364);
-            this.clockLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.clockLabel.Name = "clockLabel";
-            this.clockLabel.Size = new System.Drawing.Size(45, 20);
-            this.clockLabel.TabIndex = 4;
-            this.clockLabel.Text = "clock";
             // 
             // timer1
             // 
@@ -268,18 +255,27 @@ namespace Desktop_Notifier
             this.tableTasks.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tableTasks.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // clockLabel
+            // 
+            this.clockLabel.BackColor = System.Drawing.Color.Transparent;
+            this.clockLabel.Location = new System.Drawing.Point(697, 45);
+            this.clockLabel.Name = "clockLabel";
+            this.clockLabel.Size = new System.Drawing.Size(45, 15);
+            this.clockLabel.TabIndex = 11;
+            this.clockLabel.Text = "00:00:00";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(769, 393);
+            this.Controls.Add(this.clockLabel);
             this.Controls.Add(this.nameInsertBox);
             this.Controls.Add(this.addTaskButton);
             this.Controls.Add(this.tableTasks);
             this.Controls.Add(this.deadLineInsertBox);
             this.Controls.Add(this.topStrip);
-            this.Controls.Add(this.clockLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
@@ -299,7 +295,6 @@ namespace Desktop_Notifier
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button exitBtn;
-        private System.Windows.Forms.Label clockLabel;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2Button addTaskButton;
         private Guna.UI2.WinForms.Guna2TextBox deadLineInsertBox;
@@ -309,6 +304,7 @@ namespace Desktop_Notifier
         private Guna.UI2.WinForms.Guna2Button minimizeBtn;
         private Guna.UI2.WinForms.Guna2TextBox nameInsertBox;
         private Guna.UI2.WinForms.Guna2DataGridView tableTasks;
+        private Guna.UI2.WinForms.Guna2HtmlLabel clockLabel;
     }
 }
 

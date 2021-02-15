@@ -96,11 +96,6 @@ namespace Desktop_Notifier
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            guna2Panel2.BackColor = Color.FromArgb(100, 0, 0, 0);
-            //    tableTasks.BackColor = Color.FromArgb(100, 0, 0, 0);
-            // tableTasks.BackgroundColor = Color.FromArgb(100, 0, 0, 0);
-            this.TransparencyKey = Color.LimeGreen;
-            tableTasks.BackColor = Color.LimeGreen;
         }
 
 
