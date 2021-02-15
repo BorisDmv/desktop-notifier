@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,10 +17,11 @@ namespace Desktop_Notifier
     {
         bool dragStrip;
         int moveX, moveY;
+        public Dictionary<String, DateTime> Tasks = new Dictionary<String, DateTime>();
 
             DataTable table = new DataTable();
             DataColumn taskNameColumn;
-            DataColumn deadLineDolumn;
+            DataColumn deadLineColumn;
             DataColumn creationTimeColumn;
             DataRow row;
             DataView view;
@@ -28,16 +30,18 @@ namespace Desktop_Notifier
             InitializeComponent();
 
 
+            notifyIcon1.Visible = true;
+            notifyIcon1.ShowBalloonTip(1000, "Kur", "Huyov", ToolTipIcon.Info);
 
             taskNameColumn = new DataColumn();
             taskNameColumn.DataType = System.Type.GetType("System.String");
             taskNameColumn.ColumnName = "Task Name";
             table.Columns.Add(taskNameColumn);
 
-            deadLineDolumn = new DataColumn();
-            deadLineDolumn.DataType = Type.GetType("System.String");
-            deadLineDolumn.ColumnName = "Dead Line";
-            table.Columns.Add(deadLineDolumn);
+            deadLineColumn = new DataColumn();
+            deadLineColumn.DataType = Type.GetType("System.String");
+            deadLineColumn.ColumnName = "Dead Line";
+            table.Columns.Add(deadLineColumn);
 
             creationTimeColumn = new DataColumn();
             creationTimeColumn.DataType = Type.GetType("System.String");
@@ -103,6 +107,7 @@ namespace Desktop_Notifier
                     row["Task Name"] = nameInsertBox.Text;
                     row["Dead Line"] = deadLineInsertBox.Text;
                     row["Created At"] = DateTime.Now.ToString("hh:mm");
+                    Tasks.Add(nameInsertBox.Text, DateTime.Parse(deadLineInsertBox.Text.ToString()));
                     nameInsertBox.Text = "";
                     deadLineInsertBox.Text = "";
                     table.Rows.Add(row);
